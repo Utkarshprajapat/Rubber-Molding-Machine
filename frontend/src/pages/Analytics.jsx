@@ -31,11 +31,11 @@ export default function Analytics() {
           <h2>{quality.toFixed(2)}%</h2>
           <small>Algorithmic quality estimator</small>
         </article>
-        <article className="card metric-card">
+        {/*<article className="card metric-card">
           <p>Defect Probability</p>
           <h2>{(defectProbability * 100).toFixed(2)}%</h2>
           <small>Predictive defect engine</small>
-        </article>
+        </article>*/}
         <article className="card metric-card">
           <p>Algorithm Stack</p>
           <ul>
