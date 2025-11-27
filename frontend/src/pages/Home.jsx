@@ -93,6 +93,7 @@ export default function Home() {
           <p>Brake Shoes & Pads Manufacturing Simulator</p>
           <h1>Real-time Operations Control</h1>
         </div>
+        {/*
         <div>
           <p>Academic Backbone</p>
           <span className="tag">Probability</span>
@@ -100,6 +101,7 @@ export default function Home() {
           <span className="tag">Algorithms</span>
           <span className="tag">OOP</span>
         </div>
+        */}
       </header>
       <Dashboard
         {...dashboardProps}
