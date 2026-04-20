@@ -17,7 +17,7 @@ export class AlertSystem {
     const alerts = [];
 
     if (snapshot.temperature > 220) {
-      alerts.push(this.createAlert('critical', 'Thermal spike detected', 'Brake lining overheating beyond spec'));
+      alerts.push(this.createAlert('critical', 'Thermal spike detected', 'Mold overheating beyond spec'));
     }
     if (snapshot.pressure > 120) {
       alerts.push(this.createAlert('warning', 'Hydraulic pressure drift', 'Check piston alignment and seals'));

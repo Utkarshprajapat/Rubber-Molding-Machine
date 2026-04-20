@@ -16,8 +16,8 @@ export default function App() {
         <div className="brand">
           <span className="dot" />
           <div>
-            <p className="brand-title">BrakeLab</p>
-            <p className="brand-subtitle">Simulator Suite</p>
+            <p className="brand-title">MoldSense IoT</p>
+            <p className="brand-subtitle">Monitoring System</p>
           </div>
         </div>
         <nav>
@@ -35,12 +35,12 @@ export default function App() {
           ))}
         </nav>
         <div className="sidebar-footer">
-          <p>Subjects Stack</p>
+          <p>Project Modules</p>
           <ul>
-            <li>Prob & Random Processes</li>
-            <li>Computer Architecture</li>
-            <li>Algorithms</li>
-            <li>OOP Design</li>
+            <li>Inferential Statistics</li>
+            <li>CNDC Architecture</li>
+            <li>SQL Queries</li>
+            <li>ER Diagram</li>
           </ul>
         </div>
       </aside>

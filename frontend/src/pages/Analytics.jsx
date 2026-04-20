@@ -37,7 +37,7 @@ export default function Analytics() {
           <small>Predictive defect engine</small>
         </article>*/}
         <article className="card metric-card">
-          <p>Algorithm Stack</p>
+          <p>SQL Query Stack</p>
           <ul>
             <li>Threshold detection</li>
             <li>Predictive alerting</li>

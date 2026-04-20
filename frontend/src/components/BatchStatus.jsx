@@ -5,7 +5,7 @@ export default function BatchStatus({ data }) {
   return (
     <div className="panel">
       <header className="panel-header">
-        <p>Batch Overview</p>
+        <p>Production Run</p>
         <strong>{data.batchId}</strong>
       </header>
       <div className="panel-body">
@@ -25,7 +25,7 @@ export default function BatchStatus({ data }) {
           <strong>{data.targetOutput}</strong>
         </div>
         <div className="status-row">
-          <p>Quality Gate</p>
+          <p>Vulcanization Stage</p>
           <span className={`status-pill ${gateClass}`}>
             {data.qualityGate}
           </span>

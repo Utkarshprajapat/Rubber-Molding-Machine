@@ -6,16 +6,16 @@ const flowItems = [
   },
   {
     title: 'Sensor Bus & CPU',
-    description: 'Computer Architecture layer optimizes throughput',
+    description: 'CNDC Architecture layer optimizes throughput',
     detail: 'Simulated cache + pipeline scheduling'
   },
   {
-    title: 'Algorithm Core',
-    description: 'Design & Analysis of Algorithms evaluate batches',
+    title: 'SQL Core',
+    description: 'SQL Queries evaluate production batches',
     detail: 'Quality scoring • Threshold detection • Predictive alerts'
   },
   {
-    title: 'OOP Units',
+    title: 'ER Diagram Units',
     description: 'ManufacturingUnit • Sensor • ProductionBatch • AlertSystem',
     detail: 'Each module orchestrates state-rich simulation behaviors'
   }
@@ -26,8 +26,8 @@ export default function SystemFlow() {
     <div className="page">
       <header className="page-header">
         <div>
-          <p>Architecture & Data Flow</p>
-          <h1>Sensor → CPU → Algorithms → Alerts</h1>
+          <p>CNDC Architecture & Data Flow</p>
+          <h1>Sensor → CPU → SQL Queries → Alerts</h1>
         </div>
       </header>
       <section className="card flow-card">
@@ -50,7 +50,7 @@ export default function SystemFlow() {
         </article>
         <article className="card">
           <h3>Optimized Monitoring Loop</h3>
-          <p>Loop speed is user-controlled. Speed multiplier directly impacts sampling cadence.</p>
+          <p>Loop speed is user-controlled. Cycle Speed Multiplier directly impacts sampling cadence.</p>
         </article>
         <article className="card">
           <h3>Alert Bus</h3>

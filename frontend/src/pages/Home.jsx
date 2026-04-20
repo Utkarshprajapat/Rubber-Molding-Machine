@@ -90,16 +90,16 @@ export default function Home() {
     <div className="page">
       <header className="page-header">
         <div>
-          <p>Brake Shoes & Pads Manufacturing Simulator</p>
-          <h1>Real-time Operations Control</h1>
+          <p>IoT-Enabled 4-Pillar Compression Rubber Molding Machine</p>
+          <h1>Real-time Production Monitoring</h1>
         </div>
         {/*
         <div>
           <p>Academic Backbone</p>
-          <span className="tag">Probability</span>
-          <span className="tag">Architecture</span>
-          <span className="tag">Algorithms</span>
-          <span className="tag">OOP</span>
+          <span className="tag">Inferential Statistics</span>
+          <span className="tag">CNDC Architecture</span>
+          <span className="tag">SQL Queries</span>
+          <span className="tag">ER Diagram</span>
         </div>
         */}
       </header>

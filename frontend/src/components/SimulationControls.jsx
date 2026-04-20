@@ -23,7 +23,7 @@ export default function SimulationControls({ controls, onChange }) {
           {controls.running ? 'Pause Simulation' : 'Start Simulation'}
         </button>
         <label>
-          Temperature Stress: {controls.temperatureStress}%
+          Mold Heat Deviation: {controls.temperatureStress}%
           <input
             type="range"
             min="0"
@@ -34,7 +34,7 @@ export default function SimulationControls({ controls, onChange }) {
           />
         </label>
         <label>
-          Pressure Stress: {controls.pressureStress}%
+          Clamp Force Deviation: {controls.pressureStress}%
           <input
             type="range"
             min="0"
@@ -45,7 +45,7 @@ export default function SimulationControls({ controls, onChange }) {
           />
         </label>
         <label>
-          Speed Multiplier: {controls.speedMultiplier.toFixed(1)}x
+          Cycle Speed Multiplier: {controls.speedMultiplier.toFixed(1)}x
           <input
             type="range"
             min="0.5"

@@ -54,7 +54,7 @@ export class ProductionBatch {
       targetOutput: this.targetOutput,
       progress,
       qualityGate,
-      nextAction: progress > 90 ? 'Prep final QA' : 'Continue composite curing'
+      nextAction: progress > 90 ? 'Prep final QA' : 'Rubber curing in progress'
     };
   }
 }

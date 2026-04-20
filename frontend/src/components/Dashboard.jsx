@@ -24,16 +24,24 @@ export default function Dashboard({
         </header>
         <div className="metrics-grid">
           <div>
-            <p>Temperature</p>
+            <p>Mold Cavity Temp</p>
             <h2>{liveData.temperature.toFixed(1)} °C</h2>
           </div>
           <div>
-            <p>Pressure</p>
+            <p>Clamp Pressure</p>
             <h2>{liveData.pressure.toFixed(1)} psi</h2>
           </div>
           <div>
-            <p>Cycle Time</p>
+            <p>Cure Cycle Time</p>
             <h2>{liveData.cycleTime.toFixed(2)} s</h2>
+          </div>
+          <div>
+            <p>Clamp Force</p>
+            <h2>{liveData.clampForce.toFixed(1)} kN</h2>
+          </div>
+          <div>
+            <p>Cure Status</p>
+            <h2 className={`status-text-${liveData.cureStatus.toLowerCase()}`}>{liveData.cureStatus}</h2>
           </div>
           <div>
             <p>Quality Score</p>
