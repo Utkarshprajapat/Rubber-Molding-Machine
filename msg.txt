@@ -1,9 +1,0 @@
-feat: rebrand UI from BrakeLab to MoldSense IoT - Rubber Molding Machine
-
-- Updated all brand names and labels across frontend
-- Renamed metrics: Mold Cavity Temp, Clamp Pressure, Cure Cycle Time
-- Added Clamp Force (kN) and Cure Status metric cards
-- Updated sidebar navigation labels for DBMS/CNDC project
-- Updated BatchStatus, SimulationControls components
-- Updated dataGenerator.js with clampForce and cureStatus simulation
-- Updated page title in index.html

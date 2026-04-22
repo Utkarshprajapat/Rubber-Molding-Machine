@@ -1,13 +1,21 @@
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const severityMap = {
-  info: 'soft-blue',
-  warning: 'soft-yellow',
-  critical: 'soft-red'
-};
+export default function Alerts({ liveData }) {
+  if (!liveData) return null;
 
-export default function Alerts({ alerts }) {
+  const alerts = [];
+  
+  if (liveData.machineStatus === 'FAULT') {
+    alerts.push({ id: 'fault', severity: 'critical', title: '🚨 FAULT: Critical parameter threshold exceeded' });
+  } else if (liveData.machineStatus === 'WARNING') {
+    alerts.push({ id: 'warn', severity: 'warning', title: '⚠️ WARNING: Parameter approaching limit' });
+  }
+
+  if (liveData.defectProbability > 15) {
+    alerts.push({ id: 'defect', severity: 'warning', title: `⚠️ High defect probability detected: ${liveData.defectProbability}%` });
+  }
+
   return (
     <div className="panel alerts-panel">
       <header className="panel-header">
@@ -15,30 +23,20 @@ export default function Alerts({ alerts }) {
         <span>{alerts.length} active</span>
       </header>
       <div className="alert-list">
-        {alerts.slice(0, 6).map((alert) => (
-          <article key={alert.id} className={classNames('alert-item', severityMap[alert.severity])}>
+        {alerts.map((alert) => (
+          <article key={alert.id} className={classNames('alert-item', `soft-${alert.severity === 'critical' ? 'red' : 'yellow'}`)}>
             <div>
-              <p>{alert.title}</p>
-              <small>{alert.description}</small>
+              <p style={{ fontWeight: 'bold' }}>{alert.title}</p>
             </div>
-            <span>{alert.timestamp}</span>
+            <span>Now</span>
           </article>
         ))}
-        {alerts.length === 0 && <p className="muted">No alerts triggered</p>}
+        {alerts.length === 0 && <p className="muted">✅ No alerts triggered</p>}
       </div>
     </div>
   );
 }
 
 Alerts.propTypes = {
-  alerts: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
-      severity: PropTypes.oneOf(['info', 'warning', 'critical']).isRequired,
-      timestamp: PropTypes.string.isRequired
-    })
-  ).isRequired
+  liveData: PropTypes.object
 };
-

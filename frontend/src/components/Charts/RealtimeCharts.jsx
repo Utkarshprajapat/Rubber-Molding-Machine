@@ -29,8 +29,9 @@ export default function RealtimeCharts({ data }) {
             />
             <Legend />
             <Line type="monotone" dataKey="temperature" stroke="#fb7185" dot={false} strokeWidth={2} />
-            <Line type="monotone" dataKey="pressure" stroke="#38bdf8" dot={false} strokeWidth={2} />
-            <Line type="monotone" dataKey="cycleTime" stroke="#a5b4fc" dot={false} strokeWidth={2} />
+            <Line type="monotone" dataKey={(item) => typeof item.pressure === 'string' ? parseFloat(item.pressure) : item.pressure} name="pressure" stroke="#38bdf8" dot={false} strokeWidth={2} />
+            <Line type="monotone" dataKey={(item) => item.cycle_time ? parseFloat(item.cycle_time) : (item.cycleTime ? parseFloat(item.cycleTime) : 0)} name="cycleTime" stroke="#a5b4fc" dot={false} strokeWidth={2} />
+            <Line type="monotone" dataKey={(item) => item.clamp_force ? parseFloat(item.clamp_force) : (item.clampForce ? parseFloat(item.clampForce) : 0)} name="clampForce" stroke="#34d399" dot={false} strokeWidth={2} />
           </LineChart>
         </ResponsiveContainer>
       </div>

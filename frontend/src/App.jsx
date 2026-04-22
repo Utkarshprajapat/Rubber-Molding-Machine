@@ -2,11 +2,13 @@ import { NavLink, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home.jsx';
 import Analytics from './pages/Analytics.jsx';
 import SystemFlow from './pages/SystemFlow.jsx';
+import MaintenanceLogs from './pages/MaintenanceLogs.jsx';
 
 const navItems = [
   { label: 'Dashboard', to: '/' },
   { label: 'Analytics', to: '/analytics' },
-  { label: 'System Flow', to: '/system-flow' }
+  { label: 'System Flow', to: '/system-flow' },
+  { label: 'Maintenance Logs', to: '/maintenance' }
 ];
 
 export default function App() {
@@ -49,6 +51,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/analytics" element={<Analytics />} />
           <Route path="/system-flow" element={<SystemFlow />} />
+          <Route path="/maintenance" element={<MaintenanceLogs />} />
         </Routes>
       </main>
     </div>

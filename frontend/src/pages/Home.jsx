@@ -93,20 +93,8 @@ export default function Home() {
           <p>IoT-Enabled 4-Pillar Compression Rubber Molding Machine</p>
           <h1>Real-time Production Monitoring</h1>
         </div>
-        {/*
-        <div>
-          <p>Academic Backbone</p>
-          <span className="tag">Inferential Statistics</span>
-          <span className="tag">CNDC Architecture</span>
-          <span className="tag">SQL Queries</span>
-          <span className="tag">ER Diagram</span>
-        </div>
-        */}
       </header>
-      <Dashboard
-        {...dashboardProps}
-        onControlChange={setControls}
-      />
+      <Dashboard />
     </div>
   );
 }
