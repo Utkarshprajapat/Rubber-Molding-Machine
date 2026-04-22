@@ -1,7 +1,6 @@
-const BASE_URL = '/api';
+const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
 const api = {
-  // Sensor endpoints
   sensors: {
     postReading: async () => {
       const res = await fetch(`${BASE_URL}/sensors/reading`, { method: 'POST' });
@@ -20,8 +19,6 @@ const api = {
       return res.json();
     }
   },
-
-  // Machine endpoints
   machines: {
     getAll: async () => {
       const res = await fetch(`${BASE_URL}/machines`);
@@ -40,8 +37,6 @@ const api = {
       return res.json();
     }
   },
-
-  // Maintenance endpoints
   maintenance: {
     getAll: async () => {
       const res = await fetch(`${BASE_URL}/maintenance`);

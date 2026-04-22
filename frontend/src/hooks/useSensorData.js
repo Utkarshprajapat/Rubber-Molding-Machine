@@ -1,6 +1,19 @@
 import { useState, useEffect, useCallback } from 'react';
 import api from '../services/api';
 
+const generateFallbackData = () => ({
+  temperature: +(170 + Math.random() * 25).toFixed(2),
+  pressure: +(90 + Math.random() * 20).toFixed(2),
+  clampForce: +(180 + Math.random() * 40).toFixed(2),
+  cycleTime: +(40 + Math.random() * 15).toFixed(2),
+  qualityScore: +(82 + Math.random() * 17).toFixed(2),
+  defectProbability: +(2 + Math.random() * 8).toFixed(2),
+  cureStatus: ['CURING','CURING','CURING','COOLING','IDLE'][Math.floor(Math.random()*5)],
+  machineStatus: 'STABLE',
+  timestamp: new Date().toISOString(),
+  isFallback: true
+});
+
 const useSensorData = () => {
   const [liveData, setLiveData] = useState(null);
   const [history, setHistory] = useState([]);
@@ -26,8 +39,10 @@ const useSensorData = () => {
       }
     } catch (err) {
       setIsConnected(false);
-      setError('Backend not reachable. Check if server is running.');
-    } finally {
+      setError('Demo mode - backend offline');
+      const fallback = generateFallbackData();
+      setLiveData(fallback);
+      setHistory(prev => [...prev, fallback].slice(-40));
       setLoading(false);
     }
   }, []);
