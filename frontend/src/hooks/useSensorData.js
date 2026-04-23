@@ -24,7 +24,6 @@ const useSensorData = () => {
 
   const fetchLiveReading = useCallback(async () => {
     try {
-      // POST to generate and store new reading in DB
       const response = await api.sensors.postReading();
       if (response.success) {
         setLiveData(response.data);
@@ -36,10 +35,14 @@ const useSensorData = () => {
           const updated = [...prev, response.data];
           return updated.slice(-40);
         });
+      } else {
+        setIsConnected(false);
+        setError(response.error || 'Server returned an error');
       }
+      setLoading(false);
     } catch (err) {
       setIsConnected(false);
-      setError('Demo mode - backend offline');
+      setError('Demo mode - backend offline: ' + err.message);
       const fallback = generateFallbackData();
       setLiveData(fallback);
       setHistory(prev => [...prev, fallback].slice(-40));
