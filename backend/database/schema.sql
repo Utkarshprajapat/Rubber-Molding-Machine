@@ -1,5 +1,4 @@
-CREATE DATABASE IF NOT EXISTS rubber_molding_db;
-USE rubber_molding_db;
+-- Cloud deployment version, DB selected via CLI
 
 CREATE TABLE IF NOT EXISTS machines (
   machine_id INT PRIMARY KEY AUTO_INCREMENT,

@@ -10,7 +10,16 @@ const maintenanceRoutes = require('./routes/maintenance');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors());
+const corsOptions = {
+  origin: [
+    'http://localhost:5173',
+    'https://synapse1023.vercel.app',
+    '*'
+  ],
+  methods: ['GET', 'POST', 'PATCH', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+};
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.use('/api/sensors', sensorRoutes);

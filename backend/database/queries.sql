@@ -5,7 +5,7 @@
 --          Rubber Molding Machine
 -- ============================================
 
-USE rubber_molding_db;
+-- Cloud deployment version, DB selected via CLI
 
 -- ============================================
 -- SECTION 1: BASIC SELECT QUERIES
