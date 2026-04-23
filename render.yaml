@@ -8,3 +8,13 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
+      - key: DB_HOST
+        value: sql12.freesqldatabase.com
+      - key: DB_USER
+        value: sql12824141
+      - key: DB_PASSWORD
+        value: T2wsRLgCzF
+      - key: DB_NAME
+        value: sql12824141
+      - key: DB_PORT
+        value: "3306"
